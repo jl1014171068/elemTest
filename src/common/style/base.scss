@@ -1,0 +1,35 @@
+body,html{
+	line-height:1;
+	font-weight:200;
+	font-family:'PingFang SC','STHeitiSC-Light','Helvetica-Light',arial,sans-serif;
+}
+// dpi 1.5~  1.5*0.7=~1
+@media (-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5){
+	.border-1px{
+       &::after{
+       	 -webkit-transform:scaleY(0.7);
+       	   transform:scaleY(0.7);
+       }
+	}
+}
+
+// dpi 2~  2*0.5=1
+@media (-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5){
+	.border-1px{
+       &::after{
+       	 -webkit-transform:scaleY(0.5);
+       	   transform:scaleY(0.5);
+       }
+	}
+}
+
+.clearfix{
+	display:inline-block;
+	&:after{
+		content:'.';
+		display:block;
+		height:0;
+		clear:both;
+		visibility:hidden;
+	}
+}
