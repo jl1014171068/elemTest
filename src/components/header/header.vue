@@ -32,37 +32,8 @@
      <div v-show='detailShow' class="detail">
         <div class="detail-wrapper clearfix">
           <div class="detail-main">
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
-            <span>{{seller.bulletin}}</span>
+             <h1 class="name">{{seller.name}}</h1>
+             <star :size="48" :score="seller.score"></star>
           </div>
         </div>
         <div class="detail-close">
@@ -73,6 +44,8 @@
 </template>
 
 <script type='text/ecmascript-6'>
+  import star from 'components/star/star';
+
   export default {
      props: {
        seller: {
@@ -91,6 +64,9 @@
       showDetail () {
          this.detailShow = true;
       }
+    },
+    components: {
+       star
     }
   };
 </script>
@@ -245,9 +221,16 @@
            background:rgba(7,17,27,.8);
            .detail-wrapper{
              min-height:100%;
+             width:100%;
              .detail-main{
               margin-top:64px;
               padding-bottom:64px;
+              .name{
+                text-align:center;
+                font-weight:700;
+                line-height:16px;
+                font-size:16px;
+              }
             }
           }
           .detail-close{
