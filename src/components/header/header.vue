@@ -32,6 +32,37 @@
      <div v-show='detailShow' class="detail">
         <div class="detail-wrapper clearfix">
           <div class="detail-main">
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
+            <span>{{seller.bulletin}}</span>
           </div>
         </div>
         <div class="detail-close">
