@@ -22,7 +22,8 @@ module.exports = {
     'indent':0,
     'no-trailing-spaces':0,
     'space-before-blocks':0,
-    'no-mixed-spaces-and-tabs':0
+    'no-mixed-spaces-and-tabs':0,
+    'space-infix-ops':0
     
   }
 }

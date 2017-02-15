@@ -1,0 +1,17 @@
+@import '../../common/style/mixin.scss';
+
+/*// @include bg-img('decrease_3');
+
+// @include border-1px(rgba(7,17,27,.1));
+
+// @include border-none();*/
+
+.food{
+	position: fixed;
+	left:0;
+	top:0;
+	bottom:48px;
+	z-index: 30;
+	width: 100%;
+	background:#fff;
+}

@@ -12,7 +12,7 @@
      		<li v-for="item in goods" class="food-list food-list-hook">
      			<h1 class="title">{{item.name}}</h1>
      			<ul>
-     				<li v-for="food in item.foods" class="food-item">
+     				<li @click='selectFood(food,$event)'  v-for="food in item.foods" class="food-item">
      					<div class="icon">
      						<img width="57px" :src="food.icon">
      					</div>
@@ -34,8 +34,9 @@
      		</li>
      	</ul>
      </div>
-    <shopCart :delivery-price="seller.deliveryPrice"
-                :min-price="seller.minPrice" ></shopCart>
+    <shopCart v-ref:shopcart :delivery-price="seller.deliveryPrice"
+                :min-price="seller.minPrice" :select-foods="selectFoods"></shopCart>
+     <food :food='selectedFood'></food>           
   </div>
 </template>
 
@@ -43,6 +44,7 @@
   import BScroll from 'better-scroll';
   import shopcart from 'components/shopcart/shopcart';
   import cartcontrol from 'components/cartcontrol/cartcontrol';
+  import food from 'components/food/food';
   const ERR_OK = 0;
 
   export default {
@@ -55,7 +57,8 @@
   		return {
   			goods: [],
   			listHeight: [],
-  			scrollY: 0
+  			scrollY: 0,
+        selectedFood: {}
   		};
   	},
   	computed: {
@@ -68,6 +71,17 @@
           	}
           }
           return 0;
+       },
+       selectFoods () {
+          let foods = [];
+          this.goods.forEach((good) => {
+              good.foods.forEach((food) => {
+                 if (food.count) {
+                  foods.push(food);
+                 }
+              });
+          });
+          return foods;
        }
   	},
   	created () {
@@ -89,6 +103,7 @@
   			click: true
   		});
   		this.foodsScroll = new BScroll(this.$els.foodsWrapper, {
+        click: true,
   			probeType: 3
   		});
 
@@ -113,11 +128,29 @@
   	  let foodList = this.$els.foodsWrapper.getElementsByClassName('food-list-hook');
   	  let el = foodList[index];
   	  this.foodsScroll.scrollToElement(el, 300);
-  	}
+  	},
+    _drop (target) {
+        this.$nextTick(() => {
+            // 解决第一次点击时的性能问题,异步执行 
+            this.$refs.shopcart.drop(target);
+        });
+    },
+    selectFood (food, event) {
+       if (!event._constructed) {
+         return;
+       }
+       this.selectedFood = food;
+    }
   },
   components: {
     shopcart,
-    cartcontrol
+    cartcontrol,
+    food
+  },
+  events: {
+    'cart.add' (target) {
+        this._drop(target);
+    }
   }
  };
 </script>
