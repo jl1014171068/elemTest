@@ -36,7 +36,7 @@
      </div>
     <shopCart v-ref:shopcart :delivery-price="seller.deliveryPrice"
                 :min-price="seller.minPrice" :select-foods="selectFoods"></shopCart>
-     <food :food='selectedFood'></food>           
+     <food :food='selectedFood' v-ref:food></food>           
   </div>
 </template>
 
@@ -140,6 +140,7 @@
          return;
        }
        this.selectedFood = food;
+       this.$refs.food.show();
     }
   },
   components: {
