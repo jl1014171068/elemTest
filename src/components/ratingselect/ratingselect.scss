@@ -1,0 +1,67 @@
+@import '../../common/style/mixin.scss';
+
+/*// @include bg-img('decrease_3');
+
+// @include border-1px(rgba(7,17,27,.1));
+
+// @include border-none();*/
+
+.ratingselect{
+	.ranting-type{
+		padding:18px 0;
+		margin:0 16px;
+		@include border-1px(rgba(7,17,27,.1));
+		font-size: 0;
+		.block{
+			display: inline-block;
+			padding:8px 12px;
+			margin-right: 8px;
+			border-radius:1px;
+			color:(77,85,93);
+			font-size:12px;
+			line-height:16px;
+			&.active{
+				color:#fff;
+			}
+			.count{
+				font-size:8px;
+				margin-left: 2px;
+			}
+			&.positive{
+				background:rgba(0,160,220,.2);
+				&.active{
+					background:rgb(0,160,220);
+				}
+			}
+			&.negative{
+				background:rgba(77,85,93,.2);
+				&.active{
+					background:rgb(77,85,93);
+				}
+			}
+		}
+	}
+	.switch{
+		padding:12px 18px;
+		line-height:24px;
+		border-bottom: 1px solid  rgba(7,17,27,.1);
+		color:rgb(147,153,159);
+		font-size: 0;
+		.icon-check_circle{
+			display: inline-block;
+			vertical-align: top;
+			font-size:24px;
+			margin-right:4px;
+		}
+		.text{
+			display: inline-block;
+			vertical-align: top;
+			font-size: 12px;
+		}
+		&.on{
+			.icon-check_circle{
+				color:#00c850;
+			}
+		}
+	}
+}
